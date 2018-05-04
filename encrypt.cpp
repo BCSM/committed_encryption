@@ -137,7 +137,7 @@ int main(int argc, char **argv){
 	c_3_part_2 = emp::xorBlocks(c_3_part_2, k);
 
 	// output file format
-	//   size for c_1_part_1, c_2_part_1, c_3_part_1, message_encrypted
+	//   size for c_1_part_1, c_2_part_1, c_3_part_1, message_encrypted, message_original_size
 	//   c_1_part_1, c_2_part_1, c_3_part_1 (stored in EB_SIZE!)
 	//   c_1_part_2, c_2_part_2, c_3_part_2
 	//   message_encrypted
@@ -172,6 +172,7 @@ int main(int argc, char **argv){
 	fwrite(&c_2_part_1_size, sizeof(int), 1, fp);
 	fwrite(&c_3_part_1_size, sizeof(int), 1, fp);
 	fwrite(&output_len, sizeof(int), 1, fp);
+	fwrite(&filesize_in, sizeof(int), 1, fp);
 
 	fwrite(c_1_part_1_buffer, sizeof(uint8_t), EB_SIZE, fp);
 	fwrite(c_2_part_1_buffer, sizeof(uint8_t), EB_SIZE, fp);
