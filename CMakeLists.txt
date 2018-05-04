@@ -33,5 +33,11 @@ target_link_libraries(keygen ${EMP-TOOL_LIBRARIES})
 add_executable(encrypt "encrypt.cpp" ${sources})
 target_link_libraries(encrypt ${EMP-TOOL_LIBRARIES} ${GCRYPT_LIBRARIES})
 
+add_executable(encrypt_malicious "encrypt_malicious.cpp" ${sources})
+target_link_libraries(encrypt_malicious ${EMP-TOOL_LIBRARIES} ${GCRYPT_LIBRARIES})
+
 add_executable(decrypt "decrypt.cpp" ${sources})
 target_link_libraries(decrypt ${EMP-TOOL_LIBRARIES} ${GCRYPT_LIBRARIES})
+
+add_executable(check "check.cpp" ${sources})
+target_link_libraries(check ${EMP-TOOL_LIBRARIES} ${GCRYPT_LIBRARIES})
