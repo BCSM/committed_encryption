@@ -65,5 +65,8 @@ int main(int argc, char **argv){
         fwrite(bn_buffer, sizeof(uint64_t), 4, fp);
         fclose(fp);
 
+	emp::eb_freel(pk);
+	emp::bn_freel(sk);
+
 	return 0;
 }
