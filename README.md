@@ -24,6 +24,9 @@ cp ../doc/main.tex ./
 We can use the honest encryption to encrypt the file, and use any one of the three parties to decrypt.
 
 ```
+./keygen 1
+./keygen 2
+./keygen 3
 ./encrypt main.tex main_encrypted
 ./decrypt 1 main_encrypted main_decrypted.tex
 ./decrypt 2 main_encrypted main_decrypted.tex
